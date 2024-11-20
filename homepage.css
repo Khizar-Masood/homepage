@@ -1,33 +1,49 @@
-*{
-    margin: 0px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-:root {
-    font-family: "IBM Plex Sans", sans-serif;
+body {
+  background-color: black;
+  padding: 0;
 }
 
-body{
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1)), url('photo.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    background-color: black;
+header {
+  background-color: black;
+  color: white;
+  font-family: 'Gabriel Sans-Trial', sans-serif;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+  height: 3em;
+  width: 100vw;
+}
+
+.nav-right {
+  display: flex;
+  gap: 1em; /* Space between nav items */
+}
+
+#city-pic {
+  background: url('Karachi.webp') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 0 0 5em 5em;
 }
 
 h1{
   color: white;
-  margin: 0.5em;
+  font-family: 'Gabriel Sans-Trial', sans-serif;
+  font-weight: normal;
   text-align: center;
-  font-size: 4em;
-}
-
-p{
-  color: whitesmoke;
-  font-size: 1.5em;
-  text-align: center;
+  z-index: 1;
+  font-size: 3em;
 }
