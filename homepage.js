@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function to update the logo based on screen width
   const updateLogo = () => {
     if (window.innerWidth <= 768) {
-      logo.src = '/Icons/citylogosmall.svg'; // Mobile logo
+      logo.src = '/Icons/CityLogoSmall.svg'; // Mobile logo
     } else {
-      logo.src = '/Icons/citylogo.svg'; // Desktop logo 
+      logo.src = '/Icons/CityLogo.svg'; // Desktop logo 
     }
   };
 
