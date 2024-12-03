@@ -281,10 +281,13 @@ h1{
     align-items: center;
     text-align: center;
     margin: 0.1em;
+    height: fit-content;
   }
   #info-section{
+    margin-top: 0px;
     text-align: center;
     color: #303030;
+    height: fit-content;
   }
   .image-container .text {
     font-family: 'Gabriel-Sans-Normal', sans-serif;
@@ -355,8 +358,10 @@ h1{
     align-items: center;
     text-align: center;
     margin: 0.1em;
+    height: fit-content;
   }
   #info-section{
+    height: fit-content;
     text-align: center;
     color: #303030;
   }
