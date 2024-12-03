@@ -276,6 +276,79 @@ h1{
   #contact{
     align-items: center;
     text-align: center;
+    margin: 0.1em;
+  }
+  #info-section{
+    text-align: center;
+    color: #303030;
+  }
+  .image-container .text {
+    font-family: 'Gabriel-Sans-Normal', sans-serif;
+    position: absolute;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translate(0, 0);
+    z-index: 1;
+    pointer-events: none;
+    color: rgba(0, 0, 0, 0);
+    font-size: 1.5em;
+  }
+  .image-container:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0px 0px 33px -17px rgba(0,0,0,0.75);
+  }
+  header {
+    background-color: rgba(0, 0, 0, 0.85);
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(2em);
+    background-image: url('https://www.transparenttextures.com/patterns/coffee.png'); /* Noise pattern image */
+    background-blend-mode: overlay; /* Blend the noise with the background color */
+    color: white;
+    font-family: 'Gabriel-Sans-Normal';
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    height: 5em;
+    z-index: 1000;
+    box-shadow: 0px 8px 32px 0px rgba(0,0,0,0.9);
+    transition: transform 0.1s ease-in-out;
+  }
+  .nav-right {
+    display: flex;
+    margin-right: 1em;
+    gap: 1em;
+  }
+  
+}
+
+@media screen and (max-width: 720px) {
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1em;
+    padding: 1em;
+  }
+  .image-container img {
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 1em;
+  }
+  #footer{
+    display: inline-block;
+  }
+  #contact{
+    align-items: center;
+    text-align: center;
+    margin: 0.1em;
   }
   #info-section{
     text-align: center;
@@ -292,7 +365,7 @@ h1{
     font-size: 1.5em;
   }
   .image-container:hover .overlay {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.9);
     box-shadow: inset 0px 0px 33px -17px rgba(0,0,0,0.75);
   }
   header {
@@ -305,7 +378,7 @@ h1{
     background-blend-mode: overlay; /* Blend the noise with the background color */
     color: white;
     font-family: 'Gabriel-Sans-Normal';
-    font-size: 1.5em;
+    font-size: 1.25em;
     display: flex;
     justify-content: space-between;
     align-items: center;
