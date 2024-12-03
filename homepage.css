@@ -1,8 +1,17 @@
+/* The entire code is not structured properly. It's a mess rn. To re-organize it later. */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
+@font-face {
+  font-family: 'Gabriel-Sans-Normal';
+  src: url(./Gabriel-Sans-Normal.woff2) format('woff2');
+}
+
 
 body {
   background-color: black;
@@ -10,40 +19,305 @@ body {
 }
 
 header {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.85);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(2em);
+  background-image: url('https://www.transparenttextures.com/patterns/coffee.png'); /* Noise pattern image */
+  background-blend-mode: overlay; /* Blend the noise with the background color */
   color: white;
-  font-family: 'Gabriel Sans-Trial', sans-serif;
+  font-family: 'Gabriel-Sans-Normal';
   font-size: 1.5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5em;
   height: 3em;
-  width: 100vw;
+  z-index: 1000;
+  box-shadow: 0px 8px 32px 0px rgba(0,0,0,0.9);
+  transition: transform 0.1s ease-in-out;
 }
 
 .nav-right {
   display: flex;
-  gap: 1em; /* Space between nav items */
+  margin-right: 0.5em;
+  gap: 2em;
 }
 
+a {
+  color: inherit;
+}
+
+nav a {
+  color: white;
+  text-decoration: none; 
+  position: relative; 
+  display: inline-block;
+  transition: color 0.3s ease; 
+}
+
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -0.25em; 
+  left: 0; 
+  width: 0%; 
+  height: 0.5px; 
+  background-color: #f1f1f1; 
+  transition: width 0.08s cubic-bezier(0.25, 0.8, 0.25, 1); 
+}
+
+nav a:hover {
+  color: #f1f1f1; 
+}
+
+nav a:hover::after {
+  width: 100%; 
+}
+
+
+
 #city-pic {
-  background: url('Karachi.webp') no-repeat center center;
+  position: relative;
+  background: url('Karachi.webp') no-repeat center;
   background-size: cover;
-  width: 100%;
-  height: 70vh;
+  height: 80vh;
+  border-radius: 0 0 5em 5em;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#city-logo{
+  user-select:none;
+  pointer-events:none;
+  width: 75%;
+  height: auto;
+}
+
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  padding: 1em;
+}
+
+.image-container {
   position: relative;
-  border-radius: 0 0 5em 5em;
+  border-radius: 0.25em;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+  display: block;
+  border-radius: 1em;
+}
+
+.image-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease;
+}
+
+.image-container:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0px 0px 33px -17px rgba(0,0,0,0.75);
+}
+
+.image-container .text {
+  font-family: 'Gabriel-Sans-Normal', sans-serif;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  transform: translate(0, 0);
+  text-align: left;
+  color: white;
+  z-index: 1;
+  pointer-events: none;
+  color: rgba(0, 0, 0, 0);
+  font-size: 2.5em;
+}
+
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.image-container:hover .text {
+  color: white;
+  animation: slide-in-top 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+
+
+hr {
+  border: 0;
+  height: 0.2em; 
+  background-color: rgb(15, 15, 15);
+  width: 95%; /* Set width to 70% */
+  border-radius: 5px;
+  margin: 0.15em auto 0.5em auto; /* Center the hr using auto for left and right margins */
+}
+
+#footer{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  color: #303030;
+  font-size: 3em;
+  padding: 1em;
+  padding-top: 0.25em;
+  font-family: 'Gabriel-Sans-Normal', sans-serif;
+  background-color: black;
+  width: 100%;
+  height: 300px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.footer-text {
+  height: 100%;
+}
+
+.footer-text:visited {
+  color: #303030;; 
+  text-decoration: none; 
+}
+
+
+.footer-text:active {
+  color: #303030;; 
+  text-decoration: none;
 }
 
 h1{
   color: white;
-  font-family: 'Gabriel Sans-Trial', sans-serif;
+  font-size: 0.6em;
   font-weight: normal;
-  text-align: center;
-  z-index: 1;
-  font-size: 3em;
+  font-family: 'Gabriel-Sans-Normal', sans-serif;
+}
+#info-section{
+  line-height: 1.5em;
+  text-align: right;
+  color: #303030;
+  font-size: 0.5em;
+  font-weight: normal;
+  width: 100%;
+  height: 100%;
+  margin: 0.1em;
+  margin-top: 0.5em;
+}
+
+#contact{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+  gap: 0.5em;
+  margin: 0.1em;
+  margin-top: 0.5em;
+}
+.footer-text{
+  font-size: 0.5em;
+  margin-left: 0.5em;
+}
+.social{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+.social:hover{
+  filter: brightness(400%);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+@media screen and (max-width: 768px) {
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1em;
+    padding: 1em;
+  }
+  .image-container img {
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 1em;
+  }
+  #footer{
+    display: inline-block;
+  }
+  #contact{
+    align-items: center;
+    text-align: center;
+  }
+  #info-section{
+    text-align: center;
+    color: #303030;
+  }
+  .image-container .text {
+    font-family: 'Gabriel-Sans-Normal', sans-serif;
+    position: absolute;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    pointer-events: none;
+    color: rgba(0, 0, 0, 0);
+    font-size: 1.5em;
+  }
+  .image-container:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0px 0px 33px -17px rgba(0,0,0,0.75);
+  }
+  header {
+    background-color: rgba(0, 0, 0, 0.85);
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(2em);
+    background-image: url('https://www.transparenttextures.com/patterns/coffee.png'); /* Noise pattern image */
+    background-blend-mode: overlay; /* Blend the noise with the background color */
+    color: white;
+    font-family: 'Gabriel-Sans-Normal';
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    height: 5em;
+    z-index: 1000;
+    box-shadow: 0px 8px 32px 0px rgba(0,0,0,0.9);
+    transition: transform 0.1s ease-in-out;
+  }
+  .nav-right {
+    display: flex;
+    margin-right: 1em;
+    gap: 1em;
+  }
 }

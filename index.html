@@ -4,27 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khizar Masood</title>
+    <link rel="icon" href="Logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="homepage.css">
+    <script src="homepage.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
+    <header class="background">
         <img src="Logo.svg" style="width: 2em; height: auto; user-select: none; pointer-events: none;">
         <div class="nav-right">
-            <nav>PORTFOLIO</nav>
-            <nav>CONTACT</nav>
+            <nav><a href="#portfolio-section">PORTFOLIO</a></nav>
+            <nav><a href="#footer" class="reverse">CONTACT</a></nav>
         </div>
     </header>
 
     <div id="city-pic">
-        <div>
-          <h1>designer based in</h1>
-          <img src="CityLogo.svg" alt="City Logo" style="width: 200%; height: 200%; user-select: none; pointer-events: none; margin: 0; padding: 0;">
+        <img src="CityLogo.svg" id="city-logo" alt="Developer based in: Karachi">
+    </div>
+
+    <div id="portfolio-section" class="image-grid">
+        <div class="image-container">
+          <img src="Photo1.webp" alt="Photo 1">
+          <div class="overlay"></div>
+          <p class="text">STITCHERS</p>
+        </div>
+        <div class="image-container">
+          <img src="Photo2.webp" alt="Photo 2">
+          <div class="overlay"></div>
+          <p class="text">ASTER</p>
+        </div>
+        <div class="image-container">
+          <img src="Photo3.webp" alt="Photo 3">
+          <div class="overlay"></div>
+          <p class="text">RADAR</p>
+        </div>
+        <div class="image-container">
+          <img src="Photo4.webp" alt="Photo 4">
+          <div class="overlay"></div>
+          <p class="text">DUET</p>
         </div>
       </div>
+
+      <hr>
+
+    <div id="footer">
+        <div id="contact">
+            <h1>CONTACT</h1>
+            <div class="social">
+                <img src="Icons\GitHub.svg" style="height: 0.7em;">
+                <a href="https://github.com/khizar-masood" target="_blank" class="footer-text" rel="noopener noreferrer">GitHub</a>
+            </div>
+            <div class="social">
+                <img src="Icons\Behance.svg" style="height: 0.7em;">
+                <a href="https://www.behance.net/khizar-masood" target="_blank" class="footer-text" rel="noopener noreferrer">Behance</a>
+            </div>
+            <div class="social">
+                <img src="Icons\Dribbble.svg" style="height: 0.7em;">
+                <a href="https://dribbble.com/khizarmasood" target="_blank" class="footer-text" rel="noopener noreferrer">Dribbble</a>
+            </div>
+        </div>        
+        <div id="info-section">
+            <img src="Logo.svg" style="height: 5em; filter: brightness(10%); margin-top: 1em; margin-bottom: 1em; user-select: none; pointer-events: none;">
+            <br>
+            © 2024 — Khizar Masood
+            <br>Personal Homepage
+            <br>
+            <br>
+        </div>
+    </div>
 
 </body>
 </html>
