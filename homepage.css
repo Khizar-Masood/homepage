@@ -364,6 +364,7 @@ h1{
     height: fit-content;
     text-align: center;
     color: #303030;
+    font-size: 0.25em;
   }
   .image-container .text {
     font-family: 'Gabriel-Sans-Normal', sans-serif;
