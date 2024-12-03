@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.innerWidth <= 768) {
       logo.src = '/Icons/citylogosmall.svg'; // Mobile logo
     } else {
-      logo.src = '/Icons/citylogo.svg'; // Desktop logo
+      logo.src = '/Icons/citylogo.svg'; // Desktop logo 
     }
   };
 
