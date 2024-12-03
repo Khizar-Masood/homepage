@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const logo = document.getElementById('city-logo'); // Select the image by ID
-  const small="Icons/CityLogoSmall.svg";
-  const big="Icons/CityLogo.svg";
+  const small="CityLogoSmall.svg";
+  const big="CityLogo.svg";
   
   // Function to update the logo based on screen width
   const updateLogo = () => {
